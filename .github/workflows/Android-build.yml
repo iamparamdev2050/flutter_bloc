@@ -29,11 +29,13 @@ jobs:
     
     # Run widget tests for our flutter project.
     - run: flutter test
-
-     # Upload generated apk to the artifacts.
+    
+    # Build apk.
+    - run: flutter build apk
+    
+    # Upload generated apk to the artifacts.
     - uses: actions/upload-artifact@v3
       with:
         name: release-apk
         path: build/app/outputs/apk/release/app-release.apk
-    # Build apk.
-    - run: flutter build apk
+   
